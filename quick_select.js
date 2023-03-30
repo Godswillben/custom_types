@@ -1,9 +1,11 @@
-const quickSelect = function (array, left, right,indexToFind){
+const quickSelect = function (array, left, right, indexToFind){
     if(left < right){
         const partitionIdx = partion(array, left, right)
-        if (partitionIdx === indexToFind){
-            return array[partitionIdx];
+        if(partitionIdx === indexToFind){
+            return array[partitionIdx]
         }else if (indexToFind < partitionIdx){
+            return quickSelect(array, left, partitionIdx - 1, indexToFind)
+        }else{
             return quickSelect(array, left, partitionIdx - 1, indexToFind)
         }
     }
