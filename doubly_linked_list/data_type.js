@@ -33,9 +33,11 @@ class LinkedList {
     prepend(value) {
         const newNode = {
             value: value,
-            next: null
+            next: null,
+            prev: null
         };
         newNode.next = this.head;
+        this.head.prev =  newNode
         this.head = newNode
         this.length++;
         return this
@@ -61,12 +63,15 @@ class LinkedList {
 
         const newNode = {
             value: value,
-            next: null
-        }
+            next: null,
+            prev: null
+        };
         const leader = this.traverseToIndex(index - 1)
-        const holdingPointer = leader.next;
+        const follower = leader.next;
         leader.next = newNode;
-        newNode.next = holdingPointer;
+        newNode.prev = leader
+        newNode.next = follower;
+        follower.prev = newNode;
         this.length++;
         return this.printList()
     }
