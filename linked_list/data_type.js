@@ -36,7 +36,27 @@ class LinkedList{
         }
         return array
     }
-    insert(index, value){}
+    insert(index, value){
+        // check params
+        if (index >= this.length){
+            return this.append(value);
+        }
+        const newNode = {
+            value: value,
+            next: null
+        }
+        const leader = this.traverseToIndex(index-1)
+    }
+    traverseToIndex(index){
+        // check params
+        let counter = 0;
+        let currentNode = this.head;
+        while (counter !== index){
+            currentNode = currentNode.next;
+            counter++;
+        }
+        return currentNode;
+    }
 }
 
 const myLinkedList = new LinkedList(10);
