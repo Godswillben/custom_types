@@ -46,6 +46,12 @@ class LinkedList{
             next: null
         }
         const leader = this.traverseToIndex(index-1)
+        const holdingPointer = leader.next;
+        leader.next = newNode;
+        newNode.next = holdingPointer;
+        this.length++;
+        console.log(this.printList())
+        return this.printList()
     }
     traverseToIndex(index){
         // check params
@@ -63,4 +69,5 @@ const myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.prepend(1)
+myLinkedList.insert(2, 99)
 console.log(myLinkedList)
