@@ -36,6 +36,7 @@ class LinkedList{
         }
         return array
     }
+
     insert(index, value){
         // check params
         if (index >= this.length){
@@ -57,6 +58,7 @@ class LinkedList{
         this.length++;
         return this.printList()
     }
+
     traverseToIndex(index){
         // check params
         let counter = 0;

@@ -26,7 +26,21 @@ class Queue{
         this.length++;
         return this;
     }
-    dequeue(){}
+    dequeue(){
+        if(!this.first){
+            return null
+        }
+        if (this.first === this.last){
+            this.last = null;
+        }
+        this.first = this.first.next;
+        this.length--;
+        return this;
+    }
 }
 
 const myQueue = new Queue();
+myQueue.enqueue('Joy');
+myQueue.enqueue('Matt');
+myQueue.enqueue('Pavel');
+myQueue.enqueue('Samir');
