@@ -27,5 +27,51 @@ class Stack {
         this.length++;
         return this;
     }
-    pop(){}
+    pop(){
+        if(!this.top){
+            return null
+        }
+        if(this.top === this.bottom){
+            this.bottom= null;
+        }
+        const holdingPointer = this.top;
+        this.top = this.top.next;
+        this.length--;
+        return holdingPointer;
+    }
+}
+
+// stack im
+class ListStack {
+    constructor(){
+        this.array=[];
+    }
+    peek(){
+        return this.array[this.array.length-1];
+    }
+    push(value){
+        const newNode = new Node(value);
+        if (this.length === 0){
+            this.top = newNode;
+            this.bottom = newNode;
+        } else {
+            const holdingPointer = this.top;
+            this.top = newNode;
+            this.top.next = holdingPointer;
+        }
+        this.length++;
+        return this;
+    }
+    pop(){
+        if(!this.top){
+            return null
+        }
+        if(this.top === this.bottom){
+            this.bottom= null;
+        }
+        const holdingPointer = this.top;
+        this.top = this.top.next;
+        this.length--;
+        return holdingPointer;
+    }
 }
