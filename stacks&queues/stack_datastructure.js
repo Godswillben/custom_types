@@ -50,16 +50,7 @@ class ListStack {
         return this.array[this.array.length-1];
     }
     push(value){
-        const newNode = new Node(value);
-        if (this.length === 0){
-            this.top = newNode;
-            this.bottom = newNode;
-        } else {
-            const holdingPointer = this.top;
-            this.top = newNode;
-            this.top.next = holdingPointer;
-        }
-        this.length++;
+        this.array.push(value);
         return this;
     }
     pop(){
@@ -75,3 +66,8 @@ class ListStack {
         return holdingPointer;
     }
 }
+
+const myStack = new ListStack();
+myStack.push('google');
+myStack.push("udemy")
+myStack.peak();
