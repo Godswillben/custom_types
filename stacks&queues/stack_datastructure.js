@@ -54,20 +54,12 @@ class ListStack {
         return this;
     }
     pop(){
-        if(!this.top){
-            return null
-        }
-        if(this.top === this.bottom){
-            this.bottom= null;
-        }
-        const holdingPointer = this.top;
-        this.top = this.top.next;
-        this.length--;
-        return holdingPointer;
+        this.array.pop();
+        return this;
     }
 }
 
 const myStack = new ListStack();
 myStack.push('google');
-myStack.push("udemy")
+myStack.push("udemy");
 myStack.peak();
