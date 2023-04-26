@@ -39,3 +39,28 @@ const findTwoSum = function(nums, target){
 /**
  * check for typo or mistke in code
  */
+
+/**
+ * Check if solution is optimal or if a more optimal soultion
+ * can be gotten
+ * [1, 3, 7, 9, 2]; 
+ */
+
+const findTwoSumO= function(nums, target){
+    // value checks
+    // 
+    if (nums.length < 2){
+        return null
+    }
+    const numsMap = {};
+    for(let p=0; p<nums.length; p++){
+        const currentMapVal = numsMap[nums[p]]
+        if(currentMapVal >= 0){
+            return [currentMapVal, p]
+        }else{
+            const numberToFind = target - nums[p];
+            numsMap[numberToFind] = p;
+        }
+    }
+    return null;
+}
