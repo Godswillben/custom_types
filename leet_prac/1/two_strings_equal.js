@@ -89,9 +89,48 @@ const backSpaceCompare = function(s,t){
 //         similarString.pop()
 //     }
 // }
+const backSpaceCompareO = function(s,t){
+    sPointer = s.length -1;
+    tPointer = t.length -1;
+    sHash = 0;
+    tHash = 0;
+    while(sPointer >= 0 || tPointer >= 0){
+        if(s[sPointer] === "#" || t[tPointer] === "#"){
+            if(s[sPointer] === "#"){
+                let backCount =2;
+                while(backCount > 0){
+                    sPointer--;
+                    backCount--;
+                    if(s[sPointer] === "#"){
+                        backCount += 2;
+                    }
+                }
+            }
+            if(t[tPointer] === "#"){
+                let backCount =2;
+                while(backCount > 0){
+                    tPointer--;
+                    backCount--;
+                    if(t[tPointer] === "#"){
+                        backCount += 2;
+                    }
+                }
+            }
+        }else{
+            if(s[sPointer] !== t[tPointer]){
+                return false
+            }else {
+                p1--;
+                p2--;
+            }
+        }
+    }
+    return true
+}
+
  
 console.log(backSpaceCompareO("ab#c","az#c"))
-console.log(backSpaceCompareO("abc#d","abd"))
+console.log(backSpaceCompareO("abc#d","abzz##d"))
 
 // 
 // 
