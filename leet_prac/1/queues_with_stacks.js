@@ -16,6 +16,7 @@ class QueuesWithStacks{
         }
         return this.out.pop()
     }
+
     peek(){
         if(this.out.length === 0){
             while(this.in.length){
@@ -23,6 +24,10 @@ class QueuesWithStacks{
             }
         }
         return this.out[this.out.length -1];
+    }
+
+    empty(){
+        return this.in.length === 0 && this.out.length === 0;
     }
 }
 // [1,2,3,4,5]
