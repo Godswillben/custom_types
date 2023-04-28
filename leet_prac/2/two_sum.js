@@ -43,3 +43,21 @@ const  findTwoSum = function (nums, target){
 }
 
 /** Double check for errors */
+/** Can our code be optimized the one with less resources can
+ *  be scraficed for a much better solution */
+
+
+/** OPtimal solution */
+
+const findTwoSumO= function (nums, target){
+    const numsMap = {};
+    for(let p=0; p < nums.length; p++){
+        const currentMapVal = numsMap[p]
+        if(currentMapVal >=0){
+            return [currentMapVal, p]
+        }else{
+            const numberToFind = target - nums[p]
+            numsMap[numberToFind] = p
+        }
+    }
+}
