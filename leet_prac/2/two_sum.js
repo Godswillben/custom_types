@@ -18,4 +18,10 @@
  * -> No, only 1 pair of numbers will add up to the target
  */
 
-
+/** Test Cases
+ * [1,3,7,9,2]  t=11    [3,4]
+ * [1,3,7,9,2]  t=25    null
+ * []   t=1     null
+ * [5]  t=5     null
+ * [1,6]  t=7     [0,1]
+ */
