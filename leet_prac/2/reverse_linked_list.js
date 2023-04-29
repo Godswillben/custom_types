@@ -7,4 +7,17 @@
  * -> Return null and the node
  */
 
+const reverseLinkedList = function(head){
+    let prev = null;
+    let current = head;
+    
+    while(current){
+        let next = current.next;
+        current.next = prev;
+        prev = current;
+        current = next;
+    }
+
+    return prev;
+}
 
