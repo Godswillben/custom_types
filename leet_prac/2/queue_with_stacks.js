@@ -40,5 +40,9 @@ class QueueWithStacks {
         }
         return this.out[this.out.length - 1]
     }
+
+    empty(){
+        return this.in.length === 0 && this.out.length ===0;
+    }
     
 }
