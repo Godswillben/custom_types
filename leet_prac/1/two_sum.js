@@ -46,6 +46,8 @@ const findTwoSum = function(nums, target){
  * [1, 3, 7, 9, 2]; 
  */
 
+// comments on code
+
 const findTwoSumO= function(nums, target){
     // value checks
     // 
