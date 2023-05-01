@@ -15,6 +15,7 @@
  * "{([]"   -> false
  * "{[(])}" -> false
  */
+// comments on code
 
 const Parens = {
     '(':')',
