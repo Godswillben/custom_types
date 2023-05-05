@@ -131,6 +131,8 @@ const backSpaceCompareO = function(s,t){
  
 console.log(backSpaceCompareO("ab#c","az#c"))
 console.log(backSpaceCompareO("abc#d","abzz##d"))
+console.log(backSpaceCompareO("abc#d","abzz##d"))
+console.log(backSpaceCompareO("abc#d","abzz##d"))
 
 // 
 // 
